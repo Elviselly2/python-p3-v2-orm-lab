@@ -120,6 +120,7 @@ class TestReview:
 
     def test_instance_from_db(self):
         '''contains method "instance_from_db()" that takes a db row and creates an Review instance.'''
+        Review.all = {}  # Reset cache before tests
 
         Department.create_table()
         department = Department.create("Payroll", "Building A, 5th Floor")
